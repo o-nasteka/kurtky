@@ -51,6 +51,7 @@
     <figure>
       <img src="catalog/view/theme/kurtky/img/vin_yellow.png" alt='' />
     </figure>
+
     <form>
       <input type="text" name="name2" id="name2" placeholder="Введите Ваше имя">
       <input type="email" name="email2" id="phone2" placeholder="E-mail">
