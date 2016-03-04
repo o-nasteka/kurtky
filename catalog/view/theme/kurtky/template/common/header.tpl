@@ -23,17 +23,24 @@
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
-<script src="/catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-<link href="/catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
-<script src="/catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<link href="/catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
-<!-- <link href="catalog/view/theme/kurtky/stylesheet/stylesheet.css" rel="stylesheet"> -->
-<link href="/catalog/view/theme/kurtky/stylesheet/style.css" rel="stylesheet">
-<?php foreach ($styles as $style) { ?>
-<link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
-<?php } ?>
-<script src="/catalog/view/javascript/common.js" type="text/javascript"></script>
+
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+  <!-- <link href="/catalog/view/theme/kurtky/stylesheet/stylesheet.css" rel="stylesheet"> -->
+
+  <link rel="stylesheet" href="/catalog/view/theme/kurtky/stylesheet/normalize.css">
+  <!-- <link rel="stylesheet" href="/catalog/view/theme/kurtky/stylesheet/bootstrap.min.css"> -->
+  <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+  <link rel="stylesheet" href="/catalog/view/theme/kurtky/stylesheet/slick.css">
+  <link rel="stylesheet" href="/catalog/view/theme/kurtky/stylesheet/style.css">
+
+  <script src="/catalog/view/javascript/common.js" type="text/javascript"></script>
+
+  <?php foreach ($styles as $style) { ?>
+  <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
+  <?php } ?>
+
 <?php foreach ($scripts as $script) { ?>
 <script src="<?php echo $script; ?>" type="text/javascript"></script>
 <?php } ?>
@@ -45,7 +52,7 @@
   <div class="wrapper">
     <div id="logo">
       <figure>
-        <!-- <img src='catalog/view/theme/<?php echo $template ?>/img/logo.png' alt="logo" /> -->
+        <!-- <img src='/catalog/view/theme/<?php echo $template ?>/img/logo.png' alt="logo" /> -->
         <div id="logo">
           <?php if ($logo) { ?>
           <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
@@ -56,7 +63,8 @@
       </figure>
     </div>
     <div class='tel'>
-      +380 <span>67 <span>757 30 46</span></span>
+     <!-- +380 <span>67 <span>757 30 46</span></span> -->
+      <?php echo "<span>".$telephone."</span>"; ?>
     </div>
     <div class='icons'>
       <div class="label_box">
@@ -73,41 +81,17 @@
     </div>
   </div>
 </header>
-<?php if ($categories) { ?>
 
+<!-- -->
+<?php if ($categories) { ?>
 <div class='menu'>
   <div class='wrapper'>
     <a id="touch-menu" class="mobile-menu" href="#"><i class="icon-reorder"></i>Меню</a>
-    <nav>
-      <ul class='nav'>
-        <li><a href='#'>Мужчинам</a></li>
-        <li><a href='#'>Женщинам</a></li>
-        <li class="li_for_submenu"><a href='#'>Аксессуары</a>
-          <ul class='subMenu'>
-            <li><a href='#'>Головные уборы</a></li>
-            <li><a href='#'>Сумки</a></li>
-          </ul>
-        </li>
-        <li><a href='#'>Пошив</a></li>
-        <li><a href='#'>Оплата и доставки</a>
-          <ul class='subMenu'>
-            <li><a href='#'>Головные уборы</a></li>
-            <li><a href='#'>Сумки</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</div>
-
-
-<div class="container">
-  <nav id="menu" class="navbar">
     <div class="navbar-header"><span id="category" class="visible-xs"><?php echo $text_category; ?></span>
       <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav">
+    <nav>
+      <ul class='nav'>
         <?php foreach ($categories as $category) { ?>
         <?php if ($category['children']) { ?>
         <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
@@ -121,14 +105,16 @@
               </ul>
               <?php } ?>
             </div>
-            <a href="<?php echo $category['href']; ?>" class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a> </div>
         </li>
         <?php } else { ?>
         <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
         <?php } ?>
         <?php } ?>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </div>
 <?php } ?>
+
+
+

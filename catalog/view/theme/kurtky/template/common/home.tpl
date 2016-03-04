@@ -1,5 +1,9 @@
 <?php echo $header; ?>
 
+<?php // echo $content_top; ?>
+<?php // echo $content_bottom; ?>
+<?php // echo $column_right; ?>
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -57,6 +61,7 @@
     </div>
   </div>
 </article>
+
 <article class='testimonialis'>
   <div class='wrapper'>
     <h3>Отзывы</h3>
