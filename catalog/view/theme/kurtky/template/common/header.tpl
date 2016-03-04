@@ -23,17 +23,17 @@
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
-<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
-<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<script src="/catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="/catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="/catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="/catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
-<link href="catalog/view/theme/kurtky/stylesheet/stylesheet.css" rel="stylesheet">
-<link href="catalog/view/theme/kurtky/stylesheet/style.css" rel="stylesheet">
+<!-- <link href="catalog/view/theme/kurtky/stylesheet/stylesheet.css" rel="stylesheet"> -->
+<link href="/catalog/view/theme/kurtky/stylesheet/style.css" rel="stylesheet">
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
-<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<script src="/catalog/view/javascript/common.js" type="text/javascript"></script>
 <?php foreach ($scripts as $script) { ?>
 <script src="<?php echo $script; ?>" type="text/javascript"></script>
 <?php } ?>
@@ -45,7 +45,14 @@
   <div class="wrapper">
     <div id="logo">
       <figure>
-        <img src='catalog/view/theme/kurtky/img/logo.png' alt="logo" />
+        <!-- <img src='catalog/view/theme/<?php echo $template ?>/img/logo.png' alt="logo" /> -->
+        <div id="logo">
+          <?php if ($logo) { ?>
+          <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
+          <?php } else { ?>
+          <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
+          <?php } ?>
+        </div>
       </figure>
     </div>
     <div class='tel'>
@@ -67,6 +74,33 @@
   </div>
 </header>
 <?php if ($categories) { ?>
+
+<div class='menu'>
+  <div class='wrapper'>
+    <a id="touch-menu" class="mobile-menu" href="#"><i class="icon-reorder"></i>Меню</a>
+    <nav>
+      <ul class='nav'>
+        <li><a href='#'>Мужчинам</a></li>
+        <li><a href='#'>Женщинам</a></li>
+        <li class="li_for_submenu"><a href='#'>Аксессуары</a>
+          <ul class='subMenu'>
+            <li><a href='#'>Головные уборы</a></li>
+            <li><a href='#'>Сумки</a></li>
+          </ul>
+        </li>
+        <li><a href='#'>Пошив</a></li>
+        <li><a href='#'>Оплата и доставки</a>
+          <ul class='subMenu'>
+            <li><a href='#'>Головные уборы</a></li>
+            <li><a href='#'>Сумки</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
 <div class="container">
   <nav id="menu" class="navbar">
     <div class="navbar-header"><span id="category" class="visible-xs"><?php echo $text_category; ?></span>

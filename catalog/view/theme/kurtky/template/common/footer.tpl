@@ -2,7 +2,11 @@
   <div class='wrapper'>
     <div>
       <figure>
-        <img src="img/logo_footer.png" alt='' />
+        <?php
+        // echo $template;
+        // exit();
+        ?>
+        <img src="/catalog/view/theme/kurtky/img/logo_footer.png" alt='' />
       </figure>
     </div>
     <div>
@@ -14,7 +18,7 @@
     </div>
     <div>
       <figure>
-        <a href="doitua.com"><img src="img/logo_doit.png" alt='' /></a>
+        <a href="doitua.com"><img src="/catalog/view/theme/kurtky/img/logo_doit.png" alt='' /></a>
       </figure>
     </div>
   </div>
@@ -24,7 +28,7 @@
     <a href="#close" class="close1"></a>
     <h3>Вход</h3>
     <figure>
-      <img src="img/vin_yellow.png" alt='' />
+      <img src="/catalog/view/theme/kurtky/img/vin_yellow.png" alt='' />
     </figure>
     <p>Вы можете войти с помощью социальных сетей.</p>
     <p>Мы не будем делать публикации от вашего имени</p>
@@ -49,9 +53,8 @@
     <a href="#close" class="close2"></a>
     <h3>Регистрация</h3>
     <figure>
-      <img src="catalog/view/theme/kurtky/img/vin_yellow.png" alt='' />
+      <img src="/catalog/view/theme/kurtky/img/vin_yellow.png" alt='' />
     </figure>
-
     <form>
       <input type="text" name="name2" id="name2" placeholder="Введите Ваше имя">
       <input type="email" name="email2" id="phone2" placeholder="E-mail">
@@ -67,9 +70,9 @@
   </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="js/script.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/slick.js"></script>
+<script src="/catalog/view/theme/kurtky/js/script.js"></script>
+<script src="/catalog/view/theme/kurtky/js/bootstrap.min.js"></script>
+<script src="/catalog/view/theme/kurtky/js/slick.js"></script>
 <script>
   $(document).ready(function(){
     $('.center').slick({

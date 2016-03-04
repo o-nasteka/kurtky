@@ -72,6 +72,7 @@ class ControllerCommonFooter extends Controller {
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/footer.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/common/footer.tpl', $data);
+			$this->data['template'] = $this->config->get('config_template');
 		} else {
 			return $this->load->view('default/template/common/footer.tpl', $data);
 		}
