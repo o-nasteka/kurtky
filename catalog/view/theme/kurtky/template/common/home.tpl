@@ -4,6 +4,7 @@
 <?php // echo $content_bottom; ?>
 <?php // echo $column_right; ?>
 
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">

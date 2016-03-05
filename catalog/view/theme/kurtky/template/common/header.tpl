@@ -65,6 +65,7 @@
     <div class='tel'>
      <!-- +380 <span>67 <span>757 30 46</span></span> -->
       <?php echo "<span>".$telephone."</span>"; ?>
+      
     </div>
     <div class='icons'>
       <div class="label_box">
